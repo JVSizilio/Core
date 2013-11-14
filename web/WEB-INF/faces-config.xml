@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="2.1"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
+
+
+    <!-- 
+        JSF faz uso de Expression Language (EL) para determinar a qual classe você se refere quando ela 
+        é apontada na página xhtml. Fazendo uso de uma classe chamada ELResolver ele pega a String passada,
+        a interpreta e faz a referência adequada. A classe SpringBeanFacesELResolver proporciona a integração 
+        entre os dois frameworks interceptando a requisição e passando-a para o contexto do Spring, o qual a 
+        manipula para prover as dependências requeridas pelos ManagedBeans, que em seguida a passa para o 
+        ELResolver do próprio JSF.
+    -->
+    <application>
+        <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+    </application>
+</faces-config>
